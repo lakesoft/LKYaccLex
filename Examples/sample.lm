@@ -1,0 +1,30 @@
+/* Definitions ------------------------------------------*/
+%option reentrant
+%option bison-bridge
+%option bison-locations
+%option yylineno
+%option noyywrap
+%option nounput
+%option noinput
+%{
+#import "LKYaccLexParser.h"
+#import "LKYaccLexFlexDefinitions.h"
+#import "y.tab.h"
+%}
+
+/* Rules [custominze:1/2]--------------------------------*/
+%%
+"+"		return ADD;
+"-"		return SUB;
+"*"		return MUL;
+"/"		return DIV;
+"\n"		return CR;
+[1-9][0-9]* {
+    double temp;
+    sscanf(yytext, "%lf", &temp);
+    yylval->double_value = temp;
+    return DOUBLE_LITERAL;
+}
+%%
+
+/* User code [customize:2/2]-----------------------------*/

@@ -21,6 +21,10 @@
 		BCBB9C2519172C18007AAFEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBB9C0719172C17007AAFEB /* UIKit.framework */; };
 		BCBB9C2D19172C18007AAFEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCBB9C2B19172C18007AAFEB /* InfoPlist.strings */; };
 		BCBB9C2F19172C18007AAFEB /* LKYaccLexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBB9C2E19172C18007AAFEB /* LKYaccLexTests.m */; };
+		BCBB9C3C19172C9F007AAFEB /* LKYaccLexParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBB9C3B19172C9F007AAFEB /* LKYaccLexParser.m */; };
+		BCBB9C4119172DF7007AAFEB /* sample.ym in Sources */ = {isa = PBXBuildFile; fileRef = BCBB9C4019172DF7007AAFEB /* sample.ym */; };
+		BCBB9C4319172E54007AAFEB /* sample.lm in Sources */ = {isa = PBXBuildFile; fileRef = BCBB9C4219172E54007AAFEB /* sample.lm */; };
+		BCBB9C4A191AE802007AAFEB /* LKYaccLex.podspec in Resources */ = {isa = PBXBuildFile; fileRef = BCBB9C49191AE802007AAFEB /* LKYaccLex.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,13 @@
 		BCBB9C2A19172C18007AAFEB /* LKYaccLexTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LKYaccLexTests-Info.plist"; sourceTree = "<group>"; };
 		BCBB9C2C19172C18007AAFEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BCBB9C2E19172C18007AAFEB /* LKYaccLexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKYaccLexTests.m; sourceTree = "<group>"; };
+		BCBB9C3A19172C9F007AAFEB /* LKYaccLexParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKYaccLexParser.h; sourceTree = "<group>"; };
+		BCBB9C3B19172C9F007AAFEB /* LKYaccLexParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKYaccLexParser.m; sourceTree = "<group>"; };
+		BCBB9C4019172DF7007AAFEB /* sample.ym */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = sample.ym; sourceTree = "<group>"; };
+		BCBB9C4219172E54007AAFEB /* sample.lm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = sample.lm; sourceTree = "<group>"; };
+		BCBB9C451917CB07007AAFEB /* LKYaccLexFlexDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKYaccLexFlexDefinitions.h; sourceTree = "<group>"; };
+		BCBB9C48191A6BBD007AAFEB /* LKYaccLexBisonDeclaration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKYaccLexBisonDeclaration.h; sourceTree = "<group>"; };
+		BCBB9C49191AE802007AAFEB /* LKYaccLex.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LKYaccLex.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +93,10 @@
 		BCBB9BF719172C17007AAFEB = {
 			isa = PBXGroup;
 			children = (
-				BCBB9C0919172C17007AAFEB /* LKYaccLex */,
-				BCBB9C2819172C18007AAFEB /* LKYaccLexTests */,
+				BCBB9C3919172C2E007AAFEB /* CocoaPods */,
+				BCBB9C3819172C29007AAFEB /* Classes */,
+				BCBB9C0919172C17007AAFEB /* Examples */,
+				BCBB9C2819172C18007AAFEB /* Tests */,
 				BCBB9C0219172C17007AAFEB /* Frameworks */,
 				BCBB9C0119172C17007AAFEB /* Products */,
 			);
@@ -109,7 +122,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BCBB9C0919172C17007AAFEB /* LKYaccLex */ = {
+		BCBB9C0919172C17007AAFEB /* Examples */ = {
 			isa = PBXGroup;
 			children = (
 				BCBB9C1219172C17007AAFEB /* AppDelegate.h */,
@@ -117,10 +130,12 @@
 				BCBB9C1519172C17007AAFEB /* Main.storyboard */,
 				BCBB9C1819172C17007AAFEB /* ViewController.h */,
 				BCBB9C1919172C17007AAFEB /* ViewController.m */,
+				BCBB9C4219172E54007AAFEB /* sample.lm */,
+				BCBB9C4019172DF7007AAFEB /* sample.ym */,
 				BCBB9C1B19172C17007AAFEB /* Images.xcassets */,
 				BCBB9C0A19172C17007AAFEB /* Supporting Files */,
 			);
-			path = LKYaccLex;
+			path = Examples;
 			sourceTree = "<group>";
 		};
 		BCBB9C0A19172C17007AAFEB /* Supporting Files */ = {
@@ -134,13 +149,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BCBB9C2819172C18007AAFEB /* LKYaccLexTests */ = {
+		BCBB9C2819172C18007AAFEB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				BCBB9C2E19172C18007AAFEB /* LKYaccLexTests.m */,
 				BCBB9C2919172C18007AAFEB /* Supporting Files */,
 			);
-			path = LKYaccLexTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		BCBB9C2919172C18007AAFEB /* Supporting Files */ = {
@@ -150,6 +165,25 @@
 				BCBB9C2B19172C18007AAFEB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCBB9C3819172C29007AAFEB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BCBB9C3A19172C9F007AAFEB /* LKYaccLexParser.h */,
+				BCBB9C3B19172C9F007AAFEB /* LKYaccLexParser.m */,
+				BCBB9C451917CB07007AAFEB /* LKYaccLexFlexDefinitions.h */,
+				BCBB9C48191A6BBD007AAFEB /* LKYaccLexBisonDeclaration.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BCBB9C3919172C2E007AAFEB /* CocoaPods */ = {
+			isa = PBXGroup;
+			children = (
+				BCBB9C49191AE802007AAFEB /* LKYaccLex.podspec */,
+			);
+			name = CocoaPods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCBB9C4A191AE802007AAFEB /* LKYaccLex.podspec in Resources */,
 				BCBB9C1C19172C17007AAFEB /* Images.xcassets in Resources */,
 				BCBB9C0E19172C17007AAFEB /* InfoPlist.strings in Resources */,
 				BCBB9C1719172C17007AAFEB /* Main.storyboard in Resources */,
@@ -249,8 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCBB9C4119172DF7007AAFEB /* sample.ym in Sources */,
 				BCBB9C1A19172C17007AAFEB /* ViewController.m in Sources */,
 				BCBB9C1419172C17007AAFEB /* AppDelegate.m in Sources */,
+				BCBB9C3C19172C9F007AAFEB /* LKYaccLexParser.m in Sources */,
+				BCBB9C4319172E54007AAFEB /* sample.lm in Sources */,
 				BCBB9C1019172C17007AAFEB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,8 +415,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LKYaccLex/LKYaccLex-Prefix.pch";
-				INFOPLIST_FILE = "LKYaccLex/LKYaccLex-Info.plist";
+				GCC_PREFIX_HEADER = "Examples/LKYaccLex-Prefix.pch";
+				INFOPLIST_FILE = "Examples/LKYaccLex-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -390,8 +428,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LKYaccLex/LKYaccLex-Prefix.pch";
-				INFOPLIST_FILE = "LKYaccLex/LKYaccLex-Info.plist";
+				GCC_PREFIX_HEADER = "Examples/LKYaccLex-Prefix.pch";
+				INFOPLIST_FILE = "Examples/LKYaccLex-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -407,12 +445,12 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LKYaccLex/LKYaccLex-Prefix.pch";
+				GCC_PREFIX_HEADER = "Examples/LKYaccLex-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "LKYaccLexTests/LKYaccLexTests-Info.plist";
+				INFOPLIST_FILE = "Tests/LKYaccLexTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -429,8 +467,8 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LKYaccLex/LKYaccLex-Prefix.pch";
-				INFOPLIST_FILE = "LKYaccLexTests/LKYaccLexTests-Info.plist";
+				GCC_PREFIX_HEADER = "Examples/LKYaccLex-Prefix.pch";
+				INFOPLIST_FILE = "Tests/LKYaccLexTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
